@@ -17,9 +17,11 @@
         <TextBox Name="MaxTextBox" TextWrapping="Wrap" Text="3.0 * Math.PI / 2.0" DockPanel.Dock="Top" FontSize="22"/>
 
         <Label Content="Epsilon order:" FontFamily="Calibri" FontSize="22" DockPanel.Dock="Top" FontWeight="Bold" FontStyle="Italic"/>
-        <xctk:LongUpDown Name="EpsilonLongUpDown" Value="5" Minimum="2" Maximum="16" DockPanel.Dock="Top"/>
+        <xctk:LongUpDown Name="EpsilonLongUpDown" Value="5" Minimum="2" Maximum="10" DockPanel.Dock="Top"/>
 
         <Button Name="IntegrationButton" Content="Integrate" FontFamily="Calibri" FontSize="28" DockPanel.Dock="Top" FontWeight="Bold" Click="IntegrationButton_Click"/>
-        <TextBlock Name="Result" Text="Result will be displayed here" FontFamily="Calibri" FontSize="22"/>
+        <ScrollViewer>
+            <TextBlock Name="Result" Text="Result will be displayed here" FontFamily="Calibri" FontSize="22"/>    
+        </ScrollViewer>
     </DockPanel>
 </Window>
