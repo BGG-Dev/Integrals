@@ -2,6 +2,7 @@
 using IWPF.service;
 using System;
 using System.Windows;
+
 namespace IWPF
 {
     /// <summary>
@@ -42,13 +43,20 @@ namespace IWPF
             // Calculating epsilon
             double epsilon = Math.Pow(10.0, -1.0 * Convert.ToDouble(EpsilonLongUpDown.Value));
 
-            // Integrating
+            // Integrating as trapezoid
             IIntegrator integrator = new TrapezoidIntegrator();
-            double result = integrator.Integrate(f, a, b,epsilon);
+            double trapezoidResult = integrator.Integrate(f, a, b,epsilon);
 
-            Result.Text = "a: " + a.ToString() + " ; b: " + b.ToString() + " ; e: " + epsilon;
+            // Integrating as Simpson-Runge
+            integrator = new SimpsonRungeIntegrator();
+            double srResult = integrator.Integrate(f, a, b,epsilon);
+
+            Result.Text = "Trapezoid:\n";
+            Result.Text += "a: " + a.ToString() + " ; b: " + b.ToString() + " ; e: " + epsilon;
+            Result.Text += "\n";
+            Result.Text += "Result: " + trapezoidResult.ToString();
             Result.Text += "\n\n";
-            Result.Text += "Result: " + result.ToString();
+            Result.Text += "Simpson-Runge: " + srResult.ToString();
         }
 
         private void ShowErrorMessageBox(String msg)
