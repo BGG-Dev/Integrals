@@ -51,12 +51,16 @@ namespace IWPF
             integrator = new SimpsonRungeIntegrator();
             double srResult = integrator.Integrate(f, a, b,epsilon);
 
-            Result.Text = "Trapezoid:\n";
-            Result.Text += "a: " + a.ToString() + " ; b: " + b.ToString() + " ; e: " + epsilon;
-            Result.Text += "\n";
-            Result.Text += "Result: " + trapezoidResult.ToString();
+            // Integration as Gauss
+            integrator = new GaussIntegrator();
+            double gaussResult = integrator.Integrate(f, a, b, epsilon);
+
+            // Displaying
+            Result.Text = "Trapezoid: " + trapezoidResult.ToString();
             Result.Text += "\n\n";
             Result.Text += "Simpson-Runge: " + srResult.ToString();
+            Result.Text += "\n\n";
+            Result.Text += "Gauss: " + gaussResult.ToString();
         }
 
         private void ShowErrorMessageBox(String msg)
