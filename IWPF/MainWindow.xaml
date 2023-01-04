@@ -8,18 +8,18 @@
         Title="Lab 3 by Bohdan Pylypchenko" Height="450" Width="800">
     <DockPanel>
         <Label Content="Function to integrate (as C# expression):" FontFamily="Calibri" FontSize="22" DockPanel.Dock="Top" FontWeight="Bold" FontStyle="Italic"/>
-        <TextBox TextWrapping="Wrap" Text="Math.Pow(4.0, Math.Pow(Math.Cos(x), 2.0)" DockPanel.Dock="Top" FontSize="22"/>
+        <TextBox Name="FunctionTextBox" TextWrapping="Wrap" Text="Math.Pow(4.0, Math.Pow(Math.Cos(x), 2.0))" DockPanel.Dock="Top" FontSize="22"/>
 
         <Label Content="Min (as C# expression):" FontFamily="Calibri" FontSize="22" DockPanel.Dock="Top" FontWeight="Bold" FontStyle="Italic"/>
-        <TextBox TextWrapping="Wrap" Text="0" FontFamily="Calibri" FontSize="22" DockPanel.Dock="Top"/>
+        <TextBox Name="MinTextBox" TextWrapping="Wrap" Text="0" FontFamily="Calibri" FontSize="22" DockPanel.Dock="Top"/>
 
         <Label Content="Max (as C# expression):" FontFamily="Calibri" FontSize="22" DockPanel.Dock="Top" FontWeight="Bold" FontStyle="Italic"/>
-        <TextBox TextWrapping="Wrap" Text="3.0 * Math.PI / 2.0" DockPanel.Dock="Top" FontSize="22"/>
+        <TextBox Name="MaxTextBox" TextWrapping="Wrap" Text="3.0 * Math.PI / 2.0" DockPanel.Dock="Top" FontSize="22"/>
 
         <Label Content="Epsilon order:" FontFamily="Calibri" FontSize="22" DockPanel.Dock="Top" FontWeight="Bold" FontStyle="Italic"/>
-        <xctk:LongUpDown Value="5" Minimum="2" Maximum="8" DockPanel.Dock="Top"/>
+        <xctk:LongUpDown Name="EpsilonLongUpDown" Value="5" Minimum="2" Maximum="16" DockPanel.Dock="Top"/>
 
-        <Button Content="Integrate" FontFamily="Calibri" FontSize="28" DockPanel.Dock="Top" FontWeight="Bold"/>
+        <Button Name="IntegrationButton" Content="Integrate" FontFamily="Calibri" FontSize="28" DockPanel.Dock="Top" FontWeight="Bold" Click="IntegrationButton_Click"/>
         <TextBlock Name="Result" Text="Result will be displayed here" FontFamily="Calibri" FontSize="22"/>
     </DockPanel>
 </Window>
