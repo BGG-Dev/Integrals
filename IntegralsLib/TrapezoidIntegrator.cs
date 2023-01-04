@@ -2,18 +2,21 @@
 
 namespace IntegralsLib
 {
+    /// <summary>
+    /// Trapezoid integration implementation
+    /// </summary>
     public class TrapezoidIntegrator : IIntegrator
     {
-        private int _m2CandidateCount;
+        private const int _m2CandidateCount = 4096;
 
         /// <summary>
-        /// Default constructor
+        /// Method - integration contract implementation
         /// </summary>
-        public TrapezoidIntegrator()
-        {
-            _m2CandidateCount = 4096;
-        }
-
+        /// <param name="f"> function to integrate </param>
+        /// <param name="a"> min </param>
+        /// <param name="b"> max </param>
+        /// <param name="epsilon"> precision used to calculate h and n</param>
+        /// <returns> numeric integral value </returns>
         public double Integrate(Func<double, double> f, double a, double b, double epsilon)
         {
             // Calculating M2
